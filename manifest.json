@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "UYAP Toplu Evrak İndirici",
+  "version": "1.0",
+  "description": "UYAP Vatandaş Portalındaki dava dosyası evraklarını zip olarak indirir.",
+  "permissions": [
+    "downloads",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://vatandas.uyap.gov.tr/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://vatandas.uyap.gov.tr/*"],
+      "js": ["jszip.min.js", "content.js"]
+    }
+  ]
+}

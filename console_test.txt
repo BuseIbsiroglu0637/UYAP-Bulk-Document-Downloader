@@ -1,0 +1,49 @@
+// Test ve Simülasyon Fonksiyonu
+const getRandomDelay = () => Math.floor(Math.random() * 1500) + 1500;
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function startQueueProcess() {
+  // Sayfadaki mevcut potansiyel evrak elementlerini seç
+  const documentElements = document.querySelectorAll('.dynatree-title, [data-evrakid], tr[evrak-id], a');
+  
+  console.log(`Tespit edilen element sayısı: ${documentElements.length}`);
+  
+  if (documentElements.length === 0) {
+    console.warn("İndirilecek evrak elementi bulunamadı. Lütfen ağaç yapısının açık olduğundan emin olun.");
+    return;
+  }
+
+  let batchCount = 0;
+  const batchSize = 50;
+
+  for (let i = 0; i < documentElements.length; i++) {
+    const el = documentElements[i];
+    
+    try {
+      // Simülasyon: Gerçek indirme tetiklenmeden önce elemanı konsola yazdırır
+      console.log(`[Test Modu] İşlenen eleman sırası: ${i + 1}`, el);
+      
+      // Gerçek ortamda burası elemente tıklama veya indirme fonksiyonunu tetikler:
+      // el.click();
+
+      batchCount++;
+
+      if (batchCount >= batchSize) {
+        console.log("Güvenlik paketi tamamlandı, sistem 5 saniye dinlendiriliyor...");
+        batchCount = 0;
+        await delay(5000); 
+      } else {
+        await delay(getRandomDelay());
+      }
+
+    } catch (err) {
+      console.error(`Hata oluştu (Index: ${i}):`, err);
+    }
+  }
+
+  console.log("Test kuyruğu başarıyla tamamlandı.");
+}
+
+-----
+
+startQueueProcess()
