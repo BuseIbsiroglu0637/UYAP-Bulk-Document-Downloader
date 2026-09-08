@@ -1,19 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <style>
-    body { width: 220px; font-family: Arial, sans-serif; padding: 10px; margin: 0; background: #f4f6f9; }
-    h3 { font-size: 14px; color: #333; margin-top: 0; text-align: center; }
-    button { width: 100%; padding: 10px; background: #d9534f; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
-    button:hover { background: #c9302c; }
-    #status { font-size: 12px; color: #666; margin-top: 10px; text-align: center; }
-  </style>
+    <meta charset="UTF-8">
+    <title>UYAP Evrak İndirici</title>
+    <style>
+        body {
+            width: 280px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 16px;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+        .logo-container {
+            margin-bottom: 12px;
+        }
+        .logo-container img {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+        h2 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin: 0 0 8px 0;
+        }
+        .subtitle {
+            font-size: 12px;
+            color: #e74c3c;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+        .card {
+            background: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+        button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #4338ca;
+        }
+        #status {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #555;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
-  <h3>UYAP Evrak İndirici</h3>
-  <button id="startBtn">İndirmeyi Başlat</button>
-  <div id="status">Hazır</div>
-  <script src="popup.js"></script>
+    <div class="logo-container">
+        <img src="icon.png" alt="BO Logo">
+    </div>
+    <h2>UYAP Evrak İndirici ⚖️</h2>
+    <div class="subtitle">❤️ Sevgiyle ve zahmetle hazırlandı!</div>
+
+    <div class="card">
+        <p style="margin: 0 0 8px 0;">Özenç'cim dava dosyası evraklarını tek tıkla toplu indirmek için Buse'ye bira ısmarlaman gerekecek. 🍺</p>
+    </div>
+
+    <button id="downloadBtn">Başarabiliriz 🚀</button>
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
